@@ -34,16 +34,17 @@
   .userParametersDivLast {
     margin-right: 100px;
   }
+
+  input {
+    width: 50px;
+    text-align: center;
+  }
 }
 
 .UserSmpteContainer {
   // arrange all divs in a grid of 6 columns by 2 rows
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-
-  div {
-    background-color: coral;
-  }
 }
 
 .emptyDiv {

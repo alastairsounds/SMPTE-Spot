@@ -13,6 +13,9 @@ class ToolContainer extends Component {
         <UserSmpteContainer />
         {/* ### TEMPORARY */}
         <div className="emptyDiv"></div>
+        <button>
+          <span>Calculate</span>
+        </button>
       </div>
     );
   }
