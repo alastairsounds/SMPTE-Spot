@@ -25,7 +25,6 @@
     display: inline-block;
     flex-direction: row;
     align-items: baseline;
-
   }
 
   .userParametersDiv * {
@@ -35,5 +34,19 @@
   .userParametersDivLast {
     margin-right: 100px;
   }
+}
 
+.UserSmpteContainer {
+  // arrange all divs in a grid of 6 columns by 2 rows
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  div {
+    background-color: coral;
+  }
+}
+
+.emptyDiv {
+  background-color: coral;
+  height: 20px;
 }
