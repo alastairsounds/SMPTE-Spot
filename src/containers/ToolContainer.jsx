@@ -12,10 +12,10 @@ class ToolContainer extends Component {
         <div className="emptyDiv"></div>
         <UserSmpteContainer />
         {/* ### TEMPORARY */}
-        <div className="emptyDiv"></div>
+        {/* <div className="emptyDiv"></div>
         <button>
           <span>Calculate</span>
-        </button>
+        </button> */}
       </div>
     );
   }
