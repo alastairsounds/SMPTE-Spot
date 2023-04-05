@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import UserParametersContainer from './UserParametersContainer.jsx';
 import UserSmpteContainer from './UserSmpteContainer.jsx';
+import MeasuresDisplay from '../components/MeasuresDisplay.jsx';
 
 class ToolContainer extends Component {
   render() {
@@ -12,10 +13,15 @@ class ToolContainer extends Component {
         <div className="emptyDiv"></div>
         <UserSmpteContainer />
         {/* ### TEMPORARY */}
-        {/* <div className="emptyDiv"></div>
+        <div className="emptyDiv"></div>
+        {/* call Measures */}
+        {/* {MeasuresDisplay} */}
+        {MeasuresDisplay('MeasuresDisplay arg')}
+        {/* ### TEMPORARY */}
+        <div className="emptyDiv"></div>
         <button>
           <span>Calculate</span>
-        </button> */}
+        </button>
       </div>
     );
   }

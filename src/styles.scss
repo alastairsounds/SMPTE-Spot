@@ -1,3 +1,38 @@
+// RULES ARRANGED BY FILE PATH
+// .
+// ├── dist
+// │   ├── bundle.js
+// │   ├── bundle.js.LICENSE.txt
+// │   └── index.html
+// ├── package-lock.json
+// ├── package.json
+// ├── src
+// │   ├── App.js
+// │   ├── components
+// │   │   ├── Measures.jsx
+// │   │   └── MeasuresDisplay.jsx
+// │   ├── containers
+// │   │   ├── GuideContainer.jsx
+// │   │   ├── HeaderContainer.jsx
+// │   │   ├── MainContainer.jsx
+// │   │   ├── ToolContainer.jsx
+// │   │   ├── UserParametersContainer.jsx
+// │   │   └── UserSmpteContainer.jsx
+// │   ├── index.html
+// │   ├── index.js
+// │   ├── reducers
+// │   │   ├── index.js
+// │   │   └── markersReducer.js
+// │   ├── store.js
+// │   ├── styles.scss
+// │   └── utils
+// │       └── calculator.js
+// └── webpack.config.js
+
+// --- --- --- --- --- --- --- --- ---
+// --- --- --- --- ALL --- --- --- ---
+// --- --- --- --- --- --- --- --- ---
+
 * {
   color: #323743;
 
@@ -6,7 +41,34 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  input[type="text"]::placeholder {
+    color: #CCCCCC;
+  }
+
+  select::after {
+    color: red; /* set default text color for pseudo-element */
+  }
 }
+
+// --- --- --- --- --- --- --- --- ---
+// --- --- --- COMPONENTS  --- --- ---
+// --- --- --- MEASURES    --- --- ---
+// --- --- --- --- --- --- --- --- ---
+
+.measuresBox {
+  background-color: lightgreen;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  div {
+    border: 1px solid black;
+  }
+}
+
+// --- --- --- --- --- --- --- --- ---
+// --- --- --- --- --- --- --- --- ---
+// --- --- --- --- --- --- --- --- ---
 
 .toolContainer {
   height: 60vh;

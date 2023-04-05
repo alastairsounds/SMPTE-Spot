@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import  calc from '../utils/calculator.js';
-import { div } from '@tensorflow/tfjs';
+// import calc from '../utils/calculator.js';
 
-const userCalc = calc;
-console.log(userCalc.params)
+// const userCalc = calc;
+// console.log(userCalc.params);
 
 class UserSmpteContainer extends Component {
   render() {
@@ -37,7 +36,6 @@ class UserSmpteContainer extends Component {
             <input type="text" placeholder="01:04:01:19" />
           </div>
         </div>
-        <div className="emptyDiv"></div>
       </div>
     );
   }
