@@ -56,7 +56,7 @@
 // --- --- --- MEASURES    --- --- ---
 // --- --- --- --- --- --- --- --- ---
 
-.measuresBox {
+.rowMeasuresBox {
   // background-color: lightgreen;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -72,16 +72,16 @@
 
 .measuresDisplay {
   // make the first div contained in the class the color of red
-  // target the first div in .measuresDisplay whose class is .measuresBox
-  .measuresBox:first-child {
+  // target the first div in .measuresDisplay whose class is .rowMeasuresBox
+  .rowMeasuresBox:first-child {
     background-color: lightgreen;
   }
   // target the second div
-  .measuresBox:nth-child(2) {
+  .rowMeasuresBox:nth-child(2) {
     background-color: #b6f4b6;
   }
   // target the third div
-  .measuresBox:nth-child(3) {
+  .rowMeasuresBox:nth-child(3) {
     background-color: #dcfadc;
   }
 }

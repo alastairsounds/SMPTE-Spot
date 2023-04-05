@@ -1,5 +1,6 @@
 import React from 'react';
-import Measures from './Measures.jsx';
+import RowMeasures from './RowMeasures.jsx';
+import ColMeasures from './ColMeasures.jsx';
 // import calc from '../utils/calc.js';
 
 // const userCalc = calc;
@@ -37,7 +38,7 @@ const tempState = [
 const MeasuresDisplay = (props) => {
   const rows = [];
   for (let i = 0; i < tempState.length; i++) {
-    rows.push(<Measures key={i} measure={tempState[i]} />);
+    rows.push(<RowMeasures key={i} marker={tempState[i]} />);
   }
   return (
     <div className="measuresDisplay">
