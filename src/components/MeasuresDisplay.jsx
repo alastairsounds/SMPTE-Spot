@@ -35,15 +35,27 @@ const tempState = [
 ];
 
 const MeasuresDisplay = (props) => {
-  const measures = [];
+  const rows = [];
   for (let i = 0; i < tempState.length; i++) {
-    measures.push(<Measures key={i} measure={tempState[i]} />);
+    rows.push(<Measures key={i} measure={tempState[i]} />);
   }
   return (
     <div className="measuresDisplay">
-      {measures}
+      {rows}
     </div>
   )
 };
+
+// const MeasuresDisplay = (props) => {
+//   const rows = [];
+//   for (let i = 0; i < tempState.length; i++) {
+//     rows.push(<Measures key={i} measure={tempState[i]} />);
+//   }
+//   return (
+//     <div className="measuresDisplay">
+//       {rows}
+//     </div>
+//   )
+// };
 
 export default MeasuresDisplay;

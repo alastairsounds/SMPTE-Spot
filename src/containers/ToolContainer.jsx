@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import UserParametersContainer from './UserParametersContainer.jsx';
-import UserSmpteContainer from './UserSmpteContainer.jsx';
+import UserSmpteDisplay from '../components/UserSmpteDisplay.jsx';
 import MeasuresDisplay from '../components/MeasuresDisplay.jsx';
 
 class ToolContainer extends Component {
@@ -11,7 +11,7 @@ class ToolContainer extends Component {
         <UserParametersContainer />
         {/* ### TEMPORARY */}
         <div className="emptyDiv"></div>
-        <UserSmpteContainer />
+        {UserSmpteDisplay('UserSmpteDisplay arg')}
         {/* ### TEMPORARY */}
         <div className="emptyDiv"></div>
         {/* call Measures */}

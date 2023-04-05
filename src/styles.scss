@@ -17,7 +17,7 @@
 // │   │   ├── MainContainer.jsx
 // │   │   ├── ToolContainer.jsx
 // │   │   ├── UserParametersContainer.jsx
-// │   │   └── UserSmpteContainer.jsx
+// │   │   └── UserSmpteDisplay.jsx
 // │   ├── index.html
 // │   ├── index.js
 // │   ├── reducers
@@ -42,8 +42,8 @@
   padding: 0;
   box-sizing: border-box;
 
-  input[type="text"]::placeholder {
-    color: #CCCCCC;
+  input[type='text']::placeholder {
+    color: #cccccc;
   }
 
   select::after {
@@ -78,11 +78,11 @@
   }
   // target the second div
   .measuresBox:nth-child(2) {
-    background-color: #B6F4B6;
+    background-color: #b6f4b6;
   }
   // target the third div
   .measuresBox:nth-child(3) {
-    background-color: #DCFADC;
+    background-color: #dcfadc;
   }
 }
 
@@ -123,7 +123,7 @@
   }
 }
 
-.UserSmpteContainer {
+.UserSmpteDisplay {
   // arrange all divs in a grid of 6 columns by 2 rows
   display: grid;
   grid-template-columns: repeat(6, 1fr);

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Measures = (props) => {
-  console.log(props.measure);
   return (
     <div className="measuresBox">
       <div>
