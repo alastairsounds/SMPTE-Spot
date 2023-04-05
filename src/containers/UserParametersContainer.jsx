@@ -13,7 +13,7 @@ class UserParametersContainer extends Component {
           <select>
             <option value="0.01 BPM">0.01</option>
             <option value="0.05 BPM">0.05</option>
-            <option value="0.1 BPM" selected>
+            <option value="0.1 BPM" defaultValue>
               0.1
             </option>
             <option value="0.2 BPM">0.2</option>
@@ -25,7 +25,7 @@ class UserParametersContainer extends Component {
         <div className="userParametersDiv">
           <select name="" id="">
             {/* <option value="23.976">23.976</option> */}
-            <option value="24" selected>
+            <option value="24" defaultValue>
               24
             </option>
             <option value="25">25</option>
@@ -55,7 +55,7 @@ class UserParametersContainer extends Component {
             {/* <option value="   ">   </option> */}
             <option value="2/4">2/4</option>
             <option value="3/4">3/4</option>
-            <option value="4/4" selected>
+            <option value="4/4" defaultValue>
               4/4
             </option>
             <option value="5/4">5/4</option>
