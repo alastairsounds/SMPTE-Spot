@@ -19,9 +19,20 @@ class ToolContainer extends Component {
         {MeasuresDisplay('MeasuresDisplay arg')}
         {/* ### TEMPORARY */}
         <div className="emptyDiv"></div>
-        <button>
-          <span>Calculate</span>
-        </button>
+        {/* ##STRETCHGOAL */}
+        {/* <input type="checkbox" id="excludeTempos" name="excludeTempos" value="excludeTempos" />
+        <label htmlFor="excludeTempos">Exclude tempos within 0.5 BPM</label> */}
+        <div>
+          <button>
+            <span>Calculate</span>
+          </button>
+        </div>
+        {/* ### IMPLEMENT SAVE FUNCTIONALITY */}
+        <div>
+          <button>
+            <span>Save to Database</span>
+          </button>
+        </div>
       </div>
     );
   }

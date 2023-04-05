@@ -4,8 +4,6 @@ import Measures from './Measures.jsx';
 
 // const userCalc = calc;
 
-console.log('a')
-
 const tempState = [
   {
     mae: 0.044,
