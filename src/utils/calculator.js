@@ -5,10 +5,12 @@ class Calc {
     this.params = {
       fps: 'SET fps',
       dropFrame: 'SET dropFrame',
-      tempoTarget: 'SET tempoTarget',
+      // // ##STRETCHGOAL
+      // tempoTarget: 'SET tempoTarget',
       tempoMin: 'SET tempoMin',
       tempoMax: 'SET tempoMax',
       tempoStep: 'SET tempoStep',
+      // beats: 'SET beats',
     };
     this.tempoTests = [];
     this.hitRange = {};
@@ -97,8 +99,9 @@ class Calc {
 // const calc = new Calc();
 
 // calc.fps = 30;
-// calc.dropFrame = false;
-// calc.tempoTarget = 128;
+// calc.dropFrame = fal
+// // ##STRETCHGOALse;
+calc.tempoTarget = 128;
 // calc.tempoMin = 123;
 // calc.tempoMax = 137;
 // calc.tempoStep = 0.1;

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ColMeasures = (props) => {
-  console.log(props.number)
   return (
     <div className="colMeasuresBox">
       <label htmlFor={'Beat Target: ' + props.number}>Beat Target: </label>

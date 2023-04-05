@@ -14,8 +14,6 @@ const RowMeasures = (props) => {
     cols.push(<ColMeasures key={i} marker={props.marker[`mk${i + 1}`]} number={i + 1} />);
   }
 
-  console.log(props)
-  
   return (
     <div className="rowMeasuresBox">
       <div>

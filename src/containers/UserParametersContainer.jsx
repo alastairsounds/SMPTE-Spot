@@ -10,15 +10,15 @@ class UserParametersContainer extends Component {
           <input type="text" placeholder="100" />
           <span>-</span>
           <input type="text" placeholder="140" />
-          <select defaultValue="0.1 BPM">
-            <option value="0.01 BPM">0.01</option>
-            <option value="0.05 BPM">0.05</option>
-            <option value="0.1 BPM">0.1</option>
-            <option value="0.2 BPM">0.2</option>
-            <option value="0.5 BPM">0.5</option>
-            <option value="1 BPM">1</option>
+          <select defaultValue="0.1 Interval">
+            <option value="0.01 Interval">0.01</option>
+            <option value="0.05 Interval">0.05</option>
+            <option value="0.1 Interval">0.1</option>
+            <option value="0.2 Interval">0.2</option>
+            <option value="0.5 Interval">0.5</option>
+            <option value="1 Interval">1</option>
           </select>
-          <span className="userParametersDivLast">BPM</span>
+          <span className="userParametersDivLast">testing interval (BPM)</span>
         </div>
         <div className="userParametersDiv">
           <select name="" id="" defaultValue="24">
