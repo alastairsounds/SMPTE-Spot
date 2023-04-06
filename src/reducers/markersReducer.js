@@ -11,14 +11,13 @@ const initialState = {
   // // ##STRETCHGOAL
   // beats: 4,
   markers: [
-    '01:03:22:18',
-    '01:03:31:10',
-    '01:03:37:04',
-    '01:03:52:10',
-    '01:04:01:18',
+    '01:00:00:00',
+    '01:00:00:00',
+    '01:00:00:00',
+    '01:00:00:00',
+    '01:00:00:00',
   ],
   length: 5,
-  stateTest: 'PEMDAS',
 };
 
 const markersReducer = (state = initialState, action) => {

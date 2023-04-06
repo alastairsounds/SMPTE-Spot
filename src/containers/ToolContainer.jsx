@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   updateParam: (name, value) => {
-    dispatch(paramsOnBlur(name, value))
+    dispatch(paramsOnBlur(name, value));
   },
 });
 
@@ -19,6 +19,14 @@ class ToolContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+  }
+
+  getMarkers() {
+    let classArr = document.getElementsByClassName('colSmpteInput');
+    console.log(classArr);
+    for (const [key, value] of Object.entries(classArr)) {
+      console.log(value.value);
+    }
   }
 
   render() {
@@ -46,13 +54,24 @@ class ToolContainer extends Component {
         {/* <input type="checkbox" id="excludeTempos" name="excludeTempos" value="excludeTempos" />
         <label htmlFor="excludeTempos">Exclude tempos within 0.5 BPM</label> */}
         <div>
-          <button id="buttonCalculate">
+          <button
+            id="buttonCalculate"
+            onClick={() => {
+              this.getMarkers();
+              console.log('Calculate clicked');
+            }}
+          >
             <span>Calculate</span>
           </button>
         </div>
         {/* ### IMPLEMENT SAVE FUNCTIONALITY */}
         <div>
-          <button id="buttonSaveToDB">
+          <button
+            id="buttonSaveToDB"
+            onClick={() => {
+              console.log('Save clicked');
+            }}
+          >
             <span>Save to Database</span>
           </button>
         </div>

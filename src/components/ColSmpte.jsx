@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
 const ColSmpte = (props) => {
-  const [value, setValue] = useState(props.smpte);
+  const [value, setValue] = useState('');
 
   const formatValue = (input) => {
+    if (input === '') return '';
     // remove all non-numeric characters
     const numericInput = input.replace(/\D/g, '');
 
@@ -29,12 +30,14 @@ const ColSmpte = (props) => {
 
   const handleBlur = () => {
     const formattedValue = formatValue(value);
+    if (value === '') return;
     setValue(formattedValue);
   };
 
   return (
     <div className="colSmpteBox">
       <input
+        className="colSmpteInput"
         type="text"
         placeholder={props.smpte}
         value={value}
