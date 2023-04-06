@@ -2,7 +2,7 @@ import * as types from '../constants/actionTypes';
 import calc from '../utils/calculator';
 
 const initialState = {
-  fps: 24,
+  fps: 30,
   dropFrame: false,
   // // ##STRETCHGOAL
   // tempoTarget: 128,
@@ -18,7 +18,6 @@ const initialState = {
     '01:00:00:00',
     '01:00:00:00',
   ],
-  length: 5,
   tempoFits: [
     {
       mae: 0.0,
@@ -33,13 +32,10 @@ const initialState = {
 };
 
 const markersReducer = (state = initialState, action) => {
-  // console.log(state);
-  // console.log(calc);
-  //
-
   switch (action.type) {
     case types.PARAMS_ON_BLUR:
       const { name, value } = action.payload;
+      
       return {
         ...state,
         [name]: value,
@@ -56,18 +52,24 @@ const markersReducer = (state = initialState, action) => {
     // --- --- --- --- --- --- --- --- ---
     // --- --- --- --- --- --- --- --- ---
     case types.CALC_FITS:
-      // console.log('a');
       calc.params = {
-        dropFrame: 'SET dropFrame',
-        fps: 'SET fps',
-        tempoMax: 'SET tempoMax',
-        tempoMin: 'SET tempoMin',
-        tempoStep: 'SET tempoStep',
+        fps: state.fps,
+        dropFrame: state.dropFrame,
+        tempoMax: state.tempoMax,
+        tempoMin: state.tempoMin,
+        tempoStep: state.tempoStep,
       };
-      calc.tempoTests = state.markers;
+      console.log()
+      const newFits = calc.suitableTempos(state.markers);
       return {
         ...state,
+        // the first 3 items of newFits
+        // tempoFits: newFits,
+        tempoFits: newFits.slice(0, 3),
       };
+    // --- --- --- --- --- --- --- --- ---
+    // --- --- --- --- --- --- --- --- ---
+    // --- --- --- --- --- --- --- --- ---
     default:
       return state;
   }

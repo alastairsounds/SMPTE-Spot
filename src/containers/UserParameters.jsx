@@ -67,7 +67,7 @@ const UserParameters = (props) => {
         <select
           id="inputFps"
           name="fps"
-          defaultValue="24"
+          defaultValue="30"
           onBlur={(event) => paramsOnBlur(event)}
         >
           <option value="24">24</option>
