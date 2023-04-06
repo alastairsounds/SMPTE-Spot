@@ -4,7 +4,12 @@ import MainContainer from './containers/MainContainer.jsx';
 
 // this obtains all utilities from Component to App
 class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    
     return (
       <div className="containerMain">
         <MainContainer />

@@ -17,7 +17,7 @@ const initialState = {
     '01:03:52:10',
     '01:04:01:18',
   ],
-  markerCount: 5,
+  length: 5,
   stateTest: 'PEMDAS',
 };
 
