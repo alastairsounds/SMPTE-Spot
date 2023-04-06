@@ -4,8 +4,8 @@ const ColSmpte = (props) => {
   const [value, setValue] = useState(props.smpte);
 
   const formatValue = (input) => {
-    // remove all non-numeric characters
-    const numericInput = input.replace(/\D/g, '');
+    // remove all non-numeric characters and all but the first semicolon
+    const numericInput = input.replace(/[^0-9:;]|(?<=;).+/g, '');
 
     // pad the input with leading zeros
     const paddedInput = numericInput.padStart(8, '0');
