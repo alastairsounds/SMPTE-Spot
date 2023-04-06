@@ -7,9 +7,37 @@ class UserParametersContainer extends Component {
       <div className="userParameters">
         <div className="userParametersDiv">
           <h2>Tempo Range</h2>
-          <input type="text" placeholder="100" />
+          <input
+            id="inputTempoMax"
+            type="text"
+            placeholder="100"
+            name="inputTempoMax"
+            maxLength="6"
+            pattern="^\d{1,3}(\.\d{0,2})?$"
+            onInput={(event) => {
+              const value = event.target.value;
+              const valid = event.target.validity.valid;
+              if (!valid) {
+                event.target.value = value.slice(0, value.length - 1);
+              }
+            }}
+          />
           <span>-</span>
-          <input type="text" placeholder="140" />
+          <input
+            id="inputTempoMax"
+            type="text"
+            placeholder="140"
+            name="inputTempoMax"
+            maxLength="6"
+            pattern="^\d{1,3}(\.\d{0,2})?$"
+            onInput={(event) => {
+              const value = event.target.value;
+              const valid = event.target.validity.valid;
+              if (!valid) {
+                event.target.value = value.slice(0, value.length - 1);
+              }
+            }}
+          />
           <select defaultValue="0.1 Interval">
             <option value="0.01 Interval">0.01</option>
             <option value="0.05 Interval">0.05</option>
