@@ -23,11 +23,11 @@ const initialState = {
 
 const markersReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'inputOnBlur':
+    case 'paramsOnBlur':
       const { name, value } = action.payload;
       return {
         ...state,
-        [name]: parseFloat(value) || 0,
+        [name]: value
       };
     default:
       return state;

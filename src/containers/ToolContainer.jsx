@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import UserParametersContainer from './UserParametersContainer.jsx';
+import UserParameters from './UserParameters.jsx';
 import UserSmpteDisplay from '../components/UserSmpteDisplay.jsx';
 import MeasuresDisplay from '../components/MeasuresDisplay.jsx';
+import { paramsOnBlur } from '../actions/actions.js';
 
 const mapStateToProps = (state) => ({
   markers: state.markers.markers,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  updateParam: (name, value) => dispatch(paramsOnBlur(name, value)),
 });
 
 class ToolContainer extends Component {
@@ -17,7 +22,7 @@ class ToolContainer extends Component {
   render() {
     return (
       <div className="toolContainer">
-        <UserParametersContainer />
+        <UserParameters updateParam={this.props.updateParam} />
         {/* ### TEMPORARY */}
         {/*  */}
         <div className="emptyDiv"></div>
@@ -29,7 +34,7 @@ class ToolContainer extends Component {
         <div className="emptyDiv"></div>
         {/*  */}
         {/*  */}
-        {MeasuresDisplay('MeasuresDisplay arg')}
+        {MeasuresDisplay(this.props)}
         {/* ### TEMPORARY */}
         {/*  */}
         <div className="emptyDiv"></div>
@@ -54,4 +59,4 @@ class ToolContainer extends Component {
   }
 }
 
-export default connect(mapStateToProps, null)(ToolContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ToolContainer);
