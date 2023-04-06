@@ -33,7 +33,6 @@ import ColMeasures from './ColMeasures.jsx';
 // ];
 
 const MeasuresDisplay = (props) => {
-  console.log(props);
   const rows = [];
   for (let i = 0; i < props.length; i++) {
     rows.push(<RowMeasures key={i} marker={props[i]} />);

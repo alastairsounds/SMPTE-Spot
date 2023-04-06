@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import UserParameters from './UserParameters.jsx';
 import UserSmpteDisplay from '../components/UserSmpteDisplay.jsx';
 import MeasuresDisplay from '../components/MeasuresDisplay.jsx';
-import { paramsOnBlur, calcMarkers } from '../actions/actions.js';
+import { paramsOnBlur, prepMarkers, calcFits } from '../actions/actions.js';
 
 const mapStateToProps = (state) => ({
   markers: state.markers.markers,
@@ -14,9 +14,12 @@ const mapDispatchToProps = (dispatch) => ({
   updateParam: (name, value) => {
     dispatch(paramsOnBlur(name, value));
   },
-  calcMarkers: (array) => { 
-    dispatch(calcMarkers(array));
-  }
+  prepMarkers: (array) => {
+    dispatch(prepMarkers(array));
+  },
+  calcFits: () => {
+    dispatch(calcFits());
+  },
 });
 
 class ToolContainer extends Component {
@@ -64,7 +67,8 @@ class ToolContainer extends Component {
             id="buttonCalculate"
             onClick={() => {
               const newMarkers = this.getMarkers();
-              this.props.calcMarkers(newMarkers)
+              this.props.prepMarkers(newMarkers);
+              this.props.calcFits();
             }}
           >
             <span>Calculate</span>

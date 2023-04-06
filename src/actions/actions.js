@@ -8,7 +8,11 @@ export const paramsOnBlur = (name, value) => ({
   },
 });
 
-export const calcMarkers = (array) => ({
-  type: types.CALC_MARKERS,
+export const prepMarkers = (array) => ({
+  type: types.PREP_MARKERS,
   payload: array,
+});
+
+export const calcFits = () => ({
+  type: types.CALC_FITS,
 });

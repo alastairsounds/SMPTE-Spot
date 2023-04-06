@@ -12,6 +12,7 @@ class Calc {
       tempoStep: 'SET tempoStep',
       // beats: 'SET beats',
     };
+    this.markers = [];
     this.tempoTests = [];
     this.hitRange = {};
     this.hitRange.early = this.secToFrames(-0.1);
@@ -48,6 +49,8 @@ class Calc {
   }
 
   suitableTempos(mkArray) {
+    calc.fillTempoTests();
+    
     let resultArr = [];
 
     for (let i = 0; i < this.tempoTests.length; i++) {
@@ -81,27 +84,29 @@ class Calc {
   }
 
   fillTempoTests() {
+    const result = []
     for (
       let i = 0;
       i <= (this.tempoMax - this.tempoMin) / this.tempoStep;
       i++
     ) {
       let tempo = this.tempoMin + this.tempoStep * i;
-      this.tempoTests.push(tempo);
+      result.push(tempo);
     }
+    this.tempoTests = result
   }
 }
 
-// // // --- --- --- --- --- --- --- --- ---
+const calc = new Calc();
+
+// // --- --- --- --- --- --- --- --- ---
 
 // // TESTS
 
-// const calc = new Calc();
-
 // calc.fps = 30;
-// calc.dropFrame = fal
-// // ##STRETCHGOALse;
-calc.tempoTarget = 128;
+// calc.dropFrame = false;
+// // ##STRETCHGOALS;
+// calc.tempoTarget = 128;
 // calc.tempoMin = 123;
 // calc.tempoMax = 137;
 // calc.tempoStep = 0.1;
@@ -117,17 +122,17 @@ calc.tempoTarget = 128;
 // let mk3 = Timecode('01:05:37:04', calc.fps).subtract(startOfCue);
 // let mk4 = Timecode('01:06:52:10', calc.fps).subtract(startOfCue);
 // let mk5 = Timecode('01:08:01:18', calc.fps).subtract(startOfCue);
+// // console.log(calc.tempoTests);
 // const mkTests = [mk1, mk2, mk3, mk4, mk5];
+// calc.markers = [mk1, mk2, mk3, mk4, mk5];
+// // console.log(mkTests);
+// // console.log(calc.markers);
 
-// calc.fillTempoTests();
-
-// const tempos = calc.suitableTempos(mkTests, calc.tempoTests);
+// const tempos = calc.suitableTempos(mkTests);
 // console.log(tempos[1]);
 // console.log(tempos[2]);
 // console.log(tempos[3]);
 
 // // --- --- --- --- --- --- --- --- ---
-
-const calc = new Calc();
 
 export default calc;
