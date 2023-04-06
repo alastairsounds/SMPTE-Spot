@@ -10,7 +10,16 @@ const UserParameters = (props) => {
   };
 
   const paramsOnBlur = (event) => {
-    const { name, value } = event.target;
+    // const { name, value } = event.target;
+    const name = event.target.name;
+    let value;
+    if (event.target.value === '') {
+      value = Number(document.getElementById(`input${name.charAt(0).toUpperCase() + name.slice(1)}`).placeholder);
+    } else if (name === 'timeSig') {
+      value = event.target.value;
+    } else {
+      value = Number(event.target.value);
+    }
     props.updateParam(name, value);
   };
 
@@ -33,31 +42,31 @@ const UserParameters = (props) => {
           id="inputTempoMax"
           type="text"
           placeholder="140"
-          name="inputTempoMax"
+          name="tempoMax"
           maxLength="6"
           pattern="^\d{1,3}(\.\d{0,2})?$"
           onInput={paramsOnInput}
           onBlur={(event) => paramsOnBlur(event)}
         />
         <select
-          name="tempoStep"
           id="inputTempoStep"
-          defaultValue="0.1 Interval"
+          name="tempoStep"
+          defaultValue="0.1"
           onBlur={(event) => paramsOnBlur(event)}
         >
-          <option value="0.01 Interval">0.01</option>
-          <option value="0.05 Interval">0.05</option>
-          <option value="0.1 Interval">0.1</option>
-          <option value="0.2 Interval">0.2</option>
-          <option value="0.5 Interval">0.5</option>
-          <option value="1 Interval">1</option>
+          <option value="0.01">0.01</option>
+          <option value="0.05">0.05</option>
+          <option value="0.1">0.1</option>
+          <option value="0.2">0.2</option>
+          <option value="0.5">0.5</option>
+          <option value="1">1</option>
         </select>
         <span className="userParametersDivLast">testing interval (BPM)</span>
       </div>
       <div className="userParametersDiv">
         <select
-          name="fps"
           id="inputFps"
+          name="fps"
           defaultValue="24"
           onBlur={(event) => paramsOnBlur(event)}
         >
@@ -69,8 +78,8 @@ const UserParameters = (props) => {
         <span className="userParametersDivLast">FPS</span>
       </div>
       <select
-        name="timeSig"
         id="inputTimeSig"
+        name="timeSig"
         defaultValue="4/4"
         onBlur={(event) => paramsOnBlur(event)}
       >

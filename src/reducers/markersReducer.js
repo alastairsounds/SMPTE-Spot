@@ -1,4 +1,4 @@
-// import * as types from '../actions/actions';
+import * as types from '../constants/actionTypes';
 
 const initialState = {
   fps: 24,
@@ -22,8 +22,9 @@ const initialState = {
 };
 
 const markersReducer = (state = initialState, action) => {
+  console.log(state)
   switch (action.type) {
-    case 'paramsOnBlur':
+    case types.PARAMS_ON_BLUR:
       const { name, value } = action.payload;
       return {
         ...state,
@@ -33,5 +34,6 @@ const markersReducer = (state = initialState, action) => {
       return state;
   }
 };
+
 
 export default markersReducer;

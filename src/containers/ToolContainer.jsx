@@ -10,7 +10,9 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  updateParam: (name, value) => dispatch(paramsOnBlur(name, value)),
+  updateParam: (name, value) => {
+    dispatch(paramsOnBlur(name, value))
+  },
 });
 
 class ToolContainer extends Component {
