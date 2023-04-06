@@ -103,6 +103,7 @@ const calc = new Calc();
 
 // // TESTS
 
+// // testing
 // calc.fps = 30;
 // calc.dropFrame = false;
 // // ##STRETCHGOALS;
