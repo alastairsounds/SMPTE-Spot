@@ -1,1 +1,2 @@
 export const PARAMS_ON_BLUR = 'PARAMS_ON_BLUR';
+export const CALC_MARKERS = 'CALC_MARKERS';

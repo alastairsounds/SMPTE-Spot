@@ -3,30 +3,36 @@ import { connect } from 'react-redux';
 import UserParameters from './UserParameters.jsx';
 import UserSmpteDisplay from '../components/UserSmpteDisplay.jsx';
 import MeasuresDisplay from '../components/MeasuresDisplay.jsx';
-import { paramsOnBlur } from '../actions/actions.js';
+import { paramsOnBlur, calcMarkers } from '../actions/actions.js';
 
 const mapStateToProps = (state) => ({
   markers: state.markers.markers,
+  tempoFits: state.markers.tempoFits,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   updateParam: (name, value) => {
     dispatch(paramsOnBlur(name, value));
   },
+  calcMarkers: (array) => { 
+    dispatch(calcMarkers(array));
+  }
 });
 
 class ToolContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   getMarkers() {
     let classArr = document.getElementsByClassName('colSmpteInput');
-    console.log(classArr);
+    const result = [];
     for (const [key, value] of Object.entries(classArr)) {
-      console.log(value.value);
+      if (value.value !== '') {
+        result.push(value.value);
+      }
     }
+    return result;
   }
 
   render() {
@@ -44,7 +50,7 @@ class ToolContainer extends Component {
         <div className="emptyDiv"></div>
         {/*  */}
         {/*  */}
-        {MeasuresDisplay(this.props)}
+        {MeasuresDisplay(this.props.tempoFits)}
         {/* ### TEMPORARY */}
         {/*  */}
         <div className="emptyDiv"></div>
@@ -57,8 +63,8 @@ class ToolContainer extends Component {
           <button
             id="buttonCalculate"
             onClick={() => {
-              this.getMarkers();
-              console.log('Calculate clicked');
+              const newMarkers = this.getMarkers();
+              this.props.calcMarkers(newMarkers)
             }}
           >
             <span>Calculate</span>

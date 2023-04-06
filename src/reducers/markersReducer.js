@@ -18,6 +18,17 @@ const initialState = {
     '01:00:00:00',
   ],
   length: 5,
+  tempoFits: [
+    {
+      mae: 0.000,
+      mk1: { beatTarget: 1, resultSec: '+0.000' },
+      mk2: { beatTarget: 1, resultSec: '+0.000' },
+      mk3: { beatTarget: 1, resultSec: '+0.000' },
+      mk4: { beatTarget: 1, resultSec: '+0.000' },
+      mk5: { beatTarget: 1, resultSec: '+0.000' },
+      tempo: 120,
+    },
+  ],
 };
 
 const markersReducer = (state = initialState, action) => {
@@ -28,6 +39,11 @@ const markersReducer = (state = initialState, action) => {
       return {
         ...state,
         [name]: value
+      };
+    case types.CALC_MARKERS:
+      return {
+        ...state,
+        markers: action.payload,
       };
     default:
       return state;
