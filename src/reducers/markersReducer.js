@@ -64,12 +64,6 @@ const markersReducer = (state = initialState, action) => {
         tempoMin: 'SET tempoMin',
         tempoStep: 'SET tempoStep',
       };
-      calc.hitRange = {
-        early: calc.secToFrames(-0.1),
-        late: calc.secToFrames(0.2),
-        earlySec: -0.1,
-        lateSec: 0.2,
-      };
       calc.tempoTests = state.markers;
       return {
         ...state,

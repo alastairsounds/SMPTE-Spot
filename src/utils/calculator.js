@@ -15,8 +15,6 @@ class Calc {
     this.markers = [];
     this.tempoTests = [];
     this.hitRange = {};
-    this.hitRange.early = this.secToFrames(-0.1);
-    this.hitRange.late = this.secToFrames(0.2);
     this.hitRange.earlySec = -0.1;
     this.hitRange.lateSec = 0.2;
   }
@@ -103,36 +101,35 @@ const calc = new Calc();
 
 // // TESTS
 
-// // testing
-// calc.fps = 30;
-// calc.dropFrame = false;
-// // ##STRETCHGOALS;
-// calc.tempoTarget = 128;
-// calc.tempoMin = 123;
-// calc.tempoMax = 137;
-// calc.tempoStep = 0.1;
+calc.fps = 30;
+calc.dropFrame = false;
+// ##STRETCHGOALS;
+calc.tempoTarget = 128;
+calc.tempoMin = 123;
+calc.tempoMax = 137;
+calc.tempoStep = 0.1;
 
-// let startOfCue = Timecode('01:03:22:18', calc.fps);
-// // let mk1 = Timecode('01:03:22:18', calc.fps).subtract(startOfCue);
-// // let mk2 = Timecode('01:03:31:10', calc.fps).subtract(startOfCue);
-// // let mk3 = Timecode('01:03:37:04', calc.fps).subtract(startOfCue);
-// // let mk4 = Timecode('01:03:52:10', calc.fps).subtract(startOfCue);
-// // let mk5 = Timecode('01:04:01:18', calc.fps).subtract(startOfCue);
+let startOfCue = Timecode('01:03:22:18', calc.fps);
 // let mk1 = Timecode('01:03:22:18', calc.fps).subtract(startOfCue);
-// let mk2 = Timecode('01:04:31:10', calc.fps).subtract(startOfCue);
-// let mk3 = Timecode('01:05:37:04', calc.fps).subtract(startOfCue);
-// let mk4 = Timecode('01:06:52:10', calc.fps).subtract(startOfCue);
-// let mk5 = Timecode('01:08:01:18', calc.fps).subtract(startOfCue);
-// // console.log(calc.tempoTests);
-// const mkTests = [mk1, mk2, mk3, mk4, mk5];
-// calc.markers = [mk1, mk2, mk3, mk4, mk5];
-// // console.log(mkTests);
-// // console.log(calc.markers);
+// let mk2 = Timecode('01:03:31:10', calc.fps).subtract(startOfCue);
+// let mk3 = Timecode('01:03:37:04', calc.fps).subtract(startOfCue);
+// let mk4 = Timecode('01:03:52:10', calc.fps).subtract(startOfCue);
+// let mk5 = Timecode('01:04:01:18', calc.fps).subtract(startOfCue);
+let mk1 = Timecode('01:03:22:18', calc.fps).subtract(startOfCue);
+let mk2 = Timecode('01:04:31:10', calc.fps).subtract(startOfCue);
+let mk3 = Timecode('01:05:37:04', calc.fps).subtract(startOfCue);
+let mk4 = Timecode('01:06:52:10', calc.fps).subtract(startOfCue);
+let mk5 = Timecode('01:08:01:18', calc.fps).subtract(startOfCue);
+// console.log(calc.tempoTests);
+const mkTests = [mk1, mk2, mk3, mk4, mk5];
+calc.markers = [mk1, mk2, mk3, mk4, mk5];
+// console.log(mkTests);
+// console.log(calc.markers);
 
-// const tempos = calc.suitableTempos(mkTests);
-// console.log(tempos[1]);
-// console.log(tempos[2]);
-// console.log(tempos[3]);
+const tempos = calc.suitableTempos(mkTests);
+console.log(tempos[1]);
+console.log(tempos[2]);
+console.log(tempos[3]);
 
 // // --- --- --- --- --- --- --- --- ---
 
